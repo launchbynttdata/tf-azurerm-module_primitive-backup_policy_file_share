@@ -10,7 +10,7 @@ import (
 
 func TestComposableBackupPolicyFileShare(t *testing.T, ctx types.TestContext) {
 
-	t.Run("validateBackupPolicyFileShare", func(t *testing.T) {
+	t.Run("validateBackupPolicyFileShareExists", func(t *testing.T) {
 
 		policyID := terraform.Output(
 			t,

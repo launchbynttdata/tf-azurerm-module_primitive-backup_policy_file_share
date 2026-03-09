@@ -46,6 +46,9 @@ module "recovery_services_vault" {
 
   sku = "Standard"
 
+  depends_on = [
+    module.resource_group
+  ]
   tags = {
     resource_name = module.resource_names["recovery_vault"].standard
   }
@@ -59,7 +62,9 @@ module "backup_policy_file_share" {
   recovery_vault_name = module.recovery_services_vault.vault_name
 
   timezone = "UTC"
-
+  depends_on = [
+    module.recovery_services_vault
+  ]
   backup = {
     frequency = "Daily"
     time      = "23:00"
