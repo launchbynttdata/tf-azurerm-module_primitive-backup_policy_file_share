@@ -9,6 +9,14 @@ import (
 )
 
 func TestComposableBackupPolicyFileShare(t *testing.T, ctx types.TestContext) {
+	validateBackupPolicyFileShare(t, ctx)
+}
+
+func TestComposableReadonlyBackupPolicyFileShare(t *testing.T, ctx types.TestContext) {
+	validateBackupPolicyFileShare(t, ctx)
+}
+
+func validateBackupPolicyFileShare(t *testing.T, ctx types.TestContext) {
 
 	t.Run("validateBackupPolicyFileShareExists", func(t *testing.T) {
 

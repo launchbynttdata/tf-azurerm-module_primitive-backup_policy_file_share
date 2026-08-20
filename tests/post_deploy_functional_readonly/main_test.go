@@ -34,5 +34,5 @@ func TestBackupPolicyFileShareModule(t *testing.T) {
 		SetTestConfigFileName(infraTFVarFileNameDefault).
 		Build()
 
-	lib.RunSetupTestTeardown(t, *ctx, testimpl.TestComposableBackupPolicyFileShare)
+	lib.RunNonDestructiveTest(t, *ctx, testimpl.TestComposableReadonlyBackupPolicyFileShare)
 }
