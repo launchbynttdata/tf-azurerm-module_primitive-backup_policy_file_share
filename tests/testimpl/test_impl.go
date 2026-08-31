@@ -1,6 +1,7 @@
 package testimpl
 
 import (
+	"context"
 	"testing"
 
 	"github.com/gruntwork-io/terratest/modules/terraform"
@@ -20,9 +21,7 @@ func validateBackupPolicyFileShare(t *testing.T, ctx types.TestContext) {
 
 	t.Run("validateBackupPolicyFileShareExists", func(t *testing.T) {
 
-		policyID := terraform.Output(
-			t,
-			ctx.TerratestTerraformOptions(),
+		policyID := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(),
 			"backup_policy_file_share_id",
 		)
 
